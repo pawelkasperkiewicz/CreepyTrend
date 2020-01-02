@@ -1,4 +1,31 @@
 #' @export
-CreepyTrend <- function(Vector, k){
-  new("CreepyTrend", k = as.integer(k), series = Vector)
-}
+CreepyTrend <- R6Class("CreepyTrend",
+
+  public = list(
+    initialize = function(x){
+    #TODO add tests for type of inputed values
+    private$x <- x
+  },
+
+  fit = function(l){
+    private$fitted = as.data.table(Fit(
+      x = 1:length(private$x),
+      y = private$x,
+      l = l,
+      cores = parallel::detectCores()
+    ))[ , mean(y), x]
+  }
+
+  ),
+
+  private = list(
+    x = NA,
+    k = NA,
+    fitted = NA
+  ),
+
+  active = list(
+    smoothed = function() return(private$fitted)
+  )
+
+)

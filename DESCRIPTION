@@ -7,14 +7,16 @@ Description: Package allowing for smoothing and forecasting using moving trend e
 License: Free
 Encoding: UTF-8
 LazyData: true
-Depends: data.table, 
-  RcppArmadillo, 
-  parallel,
-  magrittr,
-  future,
-  purrr
-Imports: data.table, 
-  RcppArmadillo, 
-  parallel
-Suggests: mlr
+Depends:
+  data.table,
+  R6,
+  Rcpp,
+  RcppArmadillo
+Imports: 
+  data.table,
+  R6,
+  Rcpp,
+  RcppArmadillo
+LinkingTo: Rcpp,
+  RcppArmadillo
 RoxygenNote: 7.0.2
