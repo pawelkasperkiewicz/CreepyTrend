@@ -9,11 +9,11 @@ CreepyTrend <- R6Class("CreepyTrend",
 
   fit = function(l){
     private$fitted = as.data.table(Fit(
-      x = 1:length(private$x),
+      x = 101:(length(private$x)+100),
       y = private$x,
       l = l,
       cores = parallel::detectCores()
-    ))[ , mean(y), x]
+    ))[ , .(y = mean(y)), x]
   }
 
   ),
