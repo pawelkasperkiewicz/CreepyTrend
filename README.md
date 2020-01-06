@@ -13,7 +13,7 @@ Instalation
 #Install
 remotes::install_github("pawelkasperkiewicz/CreepyTrend", type = "source")
 
-#Useage
+#Usage
 library(ggplot2)
 library(CreepyTrend)
 
