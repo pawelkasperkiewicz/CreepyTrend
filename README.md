@@ -9,6 +9,7 @@ Instalation
 remotes::install_github("pawelkasperkiewicz/CreepyTrend", type = "source")
 ```
 <br>
+Usage
 ``` r
 library(ggplot2)
 library(CreepyTrend)
@@ -22,4 +23,4 @@ Model$fit(l = 6)
 ggplot(data, aes(x, y)) + geom_line() + geom_line(aes(y = Model$smoothed$y, color = "red"))
 ```
 <br>
-![](Smoothed.jpeg)
+![](Smoothed.png)
