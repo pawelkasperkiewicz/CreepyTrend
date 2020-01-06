@@ -20,7 +20,7 @@ List Fit(const arma::colvec & x, const arma::colvec & y, int l, int cores) {
   arma::colvec X(k*l);
   arma::uvec ids;
   arma::uvec IDs;
-
+  omp_set_num_threads(12);
   #pragma omp parallel for shared(egzog, x, X, Y, k) private(ids, IDS)
   for (int i=0; i<k; i++){
 

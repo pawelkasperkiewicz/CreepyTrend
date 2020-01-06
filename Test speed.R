@@ -14,13 +14,13 @@ data2 <- copy(data)
 data2 <- copy(rbindlist(map(1:30, function(x) data)))
 
 
-data2 <- copy(data)
+data2 <- copy(data[Date > "2015-01-01"])
 
 
 Model <- CreepyTrend$new(x = data2$Temp)
 
 start <- Sys.time()
-Model$fit(l = 1460)
+Model$fit(l = 100)
 stop <- Sys.time()
 stop - start
 

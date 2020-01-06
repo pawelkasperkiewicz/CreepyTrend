@@ -1,10 +1,10 @@
 Package: CreepyTrend
 Type: Package
-Title: Package for creepy trend method
+Title: Fast implementations of functions based on moving trend method
 Version: 0.1.0
 Author: person("Pawel", "Kasperkiewicz", email = "logim250@gmail.com", role = c("aut", "cre"))
-Description: Package allowing for smoothing and forecasting using moving trend econometric method. It also extend this method for combine it with machine learning models and variation of moving trend method invented by author of this package.
-License: Free
+Description: Package allowing for smoothing using moving trend method.
+License: XXX
 Encoding: UTF-8
 LazyData: true
 Depends:

@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 "Test speed.R"
+"Aggregation speed test.R
+"Fit_multi.cpp"
