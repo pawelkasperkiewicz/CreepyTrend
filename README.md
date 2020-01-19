@@ -24,7 +24,7 @@ data <- data.table(
 
 Model <- CreepyTrend$new(data$y)
 Model$fit(l = 6)
-ggplot(data, aes(x, y)) + geom_line() + geom_line(aes(y = Model$smoothed$y, color = "red"))
+ggplot(data, aes(x, y)) + geom_line() + geom_line(aes(y = Model$smoothed$l6, color = "red"))
 ```
 
 ![](Smoothed.png)

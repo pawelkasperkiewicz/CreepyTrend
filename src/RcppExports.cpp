@@ -18,15 +18,27 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// Aggr
+arma::colvec Aggr(const arma::colvec& X, const arma::colvec& Y);
+RcppExport SEXP _CreepyTrend_Aggr(SEXP XSEXP, SEXP YSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::colvec& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const arma::colvec& >::type Y(YSEXP);
+    rcpp_result_gen = Rcpp::wrap(Aggr(X, Y));
+    return rcpp_result_gen;
+END_RCPP
+}
 // Fit
-List Fit(const arma::colvec& x, const arma::colvec& y, int l, int cores);
+arma::mat Fit(const arma::colvec& x, const arma::colvec& y, arma::colvec& l, int cores);
 RcppExport SEXP _CreepyTrend_Fit(SEXP xSEXP, SEXP ySEXP, SEXP lSEXP, SEXP coresSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
     Rcpp::traits::input_parameter< const arma::colvec& >::type y(ySEXP);
-    Rcpp::traits::input_parameter< int >::type l(lSEXP);
+    Rcpp::traits::input_parameter< arma::colvec& >::type l(lSEXP);
     Rcpp::traits::input_parameter< int >::type cores(coresSEXP);
     rcpp_result_gen = Rcpp::wrap(Fit(x, y, l, cores));
     return rcpp_result_gen;
@@ -35,6 +47,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_CreepyTrend_Agg", (DL_FUNC) &_CreepyTrend_Agg, 2},
+    {"_CreepyTrend_Aggr", (DL_FUNC) &_CreepyTrend_Aggr, 2},
     {"_CreepyTrend_Fit", (DL_FUNC) &_CreepyTrend_Fit, 4},
     {NULL, NULL, 0}
 };

@@ -7,6 +7,15 @@ Agg <- function(X, Y) {
 }
 
 #' @export
+NULL
+
+#' @export
+NULL
+
+Aggr <- function(X, Y) {
+    .Call('_CreepyTrend_Aggr', PACKAGE = 'CreepyTrend', X, Y)
+}
+
 Fit <- function(x, y, l, cores) {
     .Call('_CreepyTrend_Fit', PACKAGE = 'CreepyTrend', x, y, l, cores)
 }

@@ -13,7 +13,8 @@ CreepyTrend <- R6Class("CreepyTrend",
       y = private$x,
       l = l,
       cores = parallel::detectCores()
-    ))[ , .(y = mean(y)), x]
+    ))
+    setnames(private$fitted, c("V1", paste0("V", 2:(length(l)+1))), c("x", paste0("l", l)))
   }
 
   ),

@@ -5,8 +5,7 @@ using namespace Rcpp;
 // [[Rcpp::depends(RcppArmadillo)]]
 
 
-//' @export
-// [[Rcpp::export]]
+
 List Fit(const arma::colvec & x, const arma::colvec & y, int l, int cores) {
 
   int k; arma::colvec coef; arma::colvec fitted; arma::colvec constant(x.n_rows);
