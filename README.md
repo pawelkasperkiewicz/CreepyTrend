@@ -28,7 +28,7 @@ R$fit(l = c(6, 10, 15, 25))
 
 #After call $fit() we obtain data.table with empirical data and smoothed versions
 R$smoothed
-```
+
 #     x            y          l6         l10         l15        l25
 #  1:   1  0.441152538  0.53886141  0.33445173  0.15535809 0.10845913
 #  2:   2  0.725970075  0.36227355  0.22581997  0.11014984 0.08015853
@@ -41,11 +41,12 @@ R$smoothed
 #119: 119  1.022634923  0.92551123  1.04837708  1.04472069 1.04991371
 #120: 120  0.983514687  0.94449100  1.05065722  1.02960815 1.06065932
 #121: 121  1.388200468  1.11244286  1.07636802  1.06300911 1.10447599
+```
 
 <br>
 
 ``` r
-#We can visualize it using $plot() method to check what level of smoothing is satisfying
+#Let's visualize it using $plot() method to check what level of smoothing is satisfying
 R$plot()
 ```
 
@@ -54,13 +55,13 @@ R$plot()
 <br>
 
 ``` r
-#When we can visualise our empirical and smoothed series with interactive mode using plotly. It is very useful when we have couple of smoothed series
+#We can visualise our empirical and smoothed series with interactive mode using plotly. It is very useful when we have couple of smoothed series
 R$plot(interactive = T)
 ```
 
 When you create plot with plotly, you can hide or show selected smoothed series just clicking on it in legend section
 
-<br><br>
+<br>
 
 While $plot is ggplot2 object, you can edit it with ggplot functions, like theme()
 
