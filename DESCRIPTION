@@ -17,6 +17,9 @@ Imports:
   R6,
   Rcpp,
   RcppArmadillo
+Suggests:
+  ggplot2,
+  plotly
 LinkingTo: Rcpp,
   RcppArmadillo
 RoxygenNote: 7.0.2

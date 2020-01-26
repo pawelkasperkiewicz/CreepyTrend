@@ -14,7 +14,14 @@ CreepyTrend <- R6Class("CreepyTrend",
       l = l,
       cores = parallel::detectCores()
     ))
-    setnames(private$fitted, c("V1", paste0("V", 2:(length(l)+1))), c("x", paste0("l", l)))
+    setnames(private$fitted, c("V1", "V2", paste0("V", 3:(length(l)+2))), c("x", "y", paste0("l", l)))
+  },
+
+  plot = function(interactive = F){
+    if(nrow(private$fitted) >= 2 & require(ggplot2, quietly = T)){
+      gg <- ggplot(melt(private$fitted, id.vars="x"), aes(x, value, color = variable)) + geom_line() + theme(axis.title = element_blank(), legend.title = element_blank())
+    }
+    if(interactive & require("plotly", quietly = T)) ggplotly(gg) else gg
   }
 
   ),

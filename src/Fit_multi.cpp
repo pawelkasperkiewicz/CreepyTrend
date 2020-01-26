@@ -29,13 +29,13 @@ arma::colvec Aggr(const arma::colvec& X, const arma::colvec& Y){
 // Fit function
 // [[Rcpp::export]]
 arma::mat Fit(const arma::colvec & x, const arma::colvec & y, arma::colvec& l, int cores) {
-  int k; arma::colvec coef; arma::colvec fitted; arma::colvec constant(x.n_rows); arma::mat smoothed(x.n_rows, l.n_rows + 1); int n;
+  int k; arma::colvec coef; arma::colvec fitted; arma::colvec constant(x.n_rows); arma::mat smoothed(x.n_rows, l.n_rows + 2); int n;
 
   constant.fill(1);
   arma::mat egzog(x.n_rows, 2);
   egzog.col(0) = x; egzog.col(1) = constant;
 
-  smoothed.col(0) = x;
+  smoothed.col(0) = x; smoothed.col(1) = y;
   n = l.n_rows;
 
 
@@ -60,7 +60,7 @@ arma::mat Fit(const arma::colvec & x, const arma::colvec & y, arma::colvec& l, i
       X.rows(IDs_f, IDs_t) = x.rows(ids_f, ids_t);
     }
 
-    smoothed.col(j+1) = Aggr(X, Y);
+    smoothed.col(j+2) = Aggr(X, Y);
 
 }
 
