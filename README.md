@@ -70,7 +70,7 @@ R$plot()
 
 <br>
 
-We can visualise our empirical and smoothed series with interactive mode using plotly. It is very useful when we have couple of smoothed series
+We can visualize our empirical and smoothed series with interactive mode using plotly. It is very useful when we have couple of smoothed series
 
 ``` r
 R$plot(interactive = T)
