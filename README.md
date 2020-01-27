@@ -7,13 +7,13 @@ Actually in intensive developing.
 
 ## Simple usage for smoothing time series
 
-###Installation
+### Installation
 
 ``` r
 remotes::install_github("pawelkasperkiewicz/CreepyTrend", type = "source", dependencies = T)
 ```
 
-###Usage
+### Usage
 
 Create example time series with some seasonality and randomness
 
