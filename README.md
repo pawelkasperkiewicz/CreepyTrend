@@ -6,27 +6,42 @@ Actually in intensive developing.
 <br><br>
 
 ## Simple usage for smoothing time series
-``` r
-#Installation
-remotes::install_github("pawelkasperkiewicz/CreepyTrend", type = "source", dependencies = T)
 
-#Usage
+###Installation
+
+``` r
+remotes::install_github("pawelkasperkiewicz/CreepyTrend", type = "source", dependencies = T)
+```
+
+###Usage
+
+Create example time series with some seasonality and randomness
+
+``` r
 library(CreepyTrend)
 
-#Create example time series with some seasonality and randomness
 set.seed(666)
 data <- data.table(
   x = seq.Date(as.Date("2000-01-01"), as.Date("2010-01-01"), "month"),
   y = sin(1:121)/3 + rnorm(121)/5 + (1:121)/100
   )
+```
 
-#Initialize CreepyTrend object
+Initialize CreepyTrend object
+
+``` r
 R <- CreepyTrend$new(x = data$y)
+```
 
-#Create four series with smoothed values of empirical data
+Create four series with smoothed values of empirical data
+
+``` r
 R$fit(l = c(6, 10, 15, 25))
+```
 
-#After call $fit() we obtain data.table with empirical data and smoothed versions
+After call $fit() we obtain data.table with empirical data and smoothed versions
+
+``` r
 R$smoothed
 
 #     x            y          l6         l10         l15        l25
@@ -45,8 +60,9 @@ R$smoothed
 
 <br>
 
+Let's visualize it using $plot() method to check what level of smoothing is satisfying
+
 ``` r
-#Let's visualize it using $plot() method to check what level of smoothing is satisfying
 R$plot()
 ```
 
@@ -54,8 +70,9 @@ R$plot()
 
 <br>
 
+We can visualise our empirical and smoothed series with interactive mode using plotly. It is very useful when we have couple of smoothed series
+
 ``` r
-#We can visualise our empirical and smoothed series with interactive mode using plotly. It is very useful when we have couple of smoothed series
 R$plot(interactive = T)
 ```
 
