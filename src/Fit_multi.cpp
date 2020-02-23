@@ -1,7 +1,5 @@
 #include <RcppArmadillo.h>
-#include <omp.h>
 using namespace Rcpp;
-// [[Rcpp::plugins(openmp)]]
 // [[Rcpp::depends(RcppArmadillo)]]
 
 //' @export
@@ -14,8 +12,7 @@ arma::colvec Aggr(const arma::colvec& X, const arma::colvec& Y){
 
   arma::uvec I;
   arma::uvec F;
-  //omp_set_num_threads(12);
-  //#pragma omp parallel for shared(X, Y, y) private(I, F)
+
   for(int i=0; i<n; i++){
     I = i;
     F = arma::find(X == i+1);
@@ -42,8 +39,6 @@ arma::mat Fit(const arma::colvec & x, const arma::colvec & y, arma::colvec& l, i
   int ids_f; int ids_t;
   int IDs_f; int IDs_t;
 
-  //omp_set_num_threads(12);
-  //#pragma omp parallel for shared(egzog, x, X, Y, k) private(ids, IDS)
   for (int j=0; j<n; j++){
 
     k = x.n_rows - arma::as_scalar(l.row(j)) + 1;

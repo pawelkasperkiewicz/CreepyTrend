@@ -5,3 +5,6 @@
 "Test speed.R"
 "Aggregation speed test.R
 "Fit_multi.cpp"
+src/CreepyTrend.so
+src/Fit_multi.o
+src/RcppExports.o

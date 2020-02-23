@@ -1,3 +1,0 @@
-useDynLib(CreepyTrend, .registration=TRUE)
-exportPattern("^[[:alpha:]]+")
-importFrom(Rcpp, evalCpp)
