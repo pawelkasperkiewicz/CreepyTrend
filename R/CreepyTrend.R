@@ -1,4 +1,5 @@
 #' @export
+#' @useDynLib CreepyTrend
 CreepyTrend <- R6Class("CreepyTrend",
 
   public = list(

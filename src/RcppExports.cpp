@@ -6,18 +6,6 @@
 
 using namespace Rcpp;
 
-// Agg
-arma::rowvec Agg(const arma::colvec& X, const arma::colvec& Y);
-RcppExport SEXP _CreepyTrend_Agg(SEXP XSEXP, SEXP YSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type X(XSEXP);
-    Rcpp::traits::input_parameter< const arma::colvec& >::type Y(YSEXP);
-    rcpp_result_gen = Rcpp::wrap(Agg(X, Y));
-    return rcpp_result_gen;
-END_RCPP
-}
 // Aggr
 arma::colvec Aggr(const arma::colvec& X, const arma::colvec& Y);
 RcppExport SEXP _CreepyTrend_Aggr(SEXP XSEXP, SEXP YSEXP) {
@@ -46,7 +34,6 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_CreepyTrend_Agg", (DL_FUNC) &_CreepyTrend_Agg, 2},
     {"_CreepyTrend_Aggr", (DL_FUNC) &_CreepyTrend_Aggr, 2},
     {"_CreepyTrend_Fit", (DL_FUNC) &_CreepyTrend_Fit, 4},
     {NULL, NULL, 0}
