@@ -1,4 +1,0 @@
-## -*- mode: makefile; -*-
-
-PKG_CXXFLAGS = -I../inst/include @OPENMP_FLAG@
-PKG_LIBS= @OPENMP_FLAG@ $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
