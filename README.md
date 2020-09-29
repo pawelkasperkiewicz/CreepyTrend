@@ -1,7 +1,7 @@
 # CreepyTrend
 
 Fast and object oriented implementation of method based on moving trend algorithm using C++ and RcppArmadillo.
-Actually in intensive developing.
+Currently in intensive developing.
 
 <br><br>
 
